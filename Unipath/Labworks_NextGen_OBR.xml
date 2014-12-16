@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<node name="Order" structure="delimited" delimiter="&amp;#13;" field_order="infix" desc="Order Files"
+	skip_lf="True" append_lf="True" spec_vsn="3.1.2.0">
+	<node name="MSH" structure="delimited" occurs_min="1" field_order="infix" desc="Message Header"
+		delimiter="|" identifier="MSH" identifier_start="0">
+		<node name="MSH-0" position_start="0" type="string" desc="Segment ID" required="True"
+			default="MSH" />
+		<node name="MSH-1" position_start="1" type="string" desc="Encoding Characters" required="True"
+			default="^~\&amp;" />
+		<node name="MSH-2" position_start="2" type="string" desc="Sending Application" />
+		<node name="MSH-3" position_start="3" type="string" desc="Sending Facility" />
+		<node name="MSH-4" position_start="4" type="string" />
+		<node name="MSH-5" position_start="5" type="string" desc="Receiving Facility" />
+		<node name="MSH-6" position_start="6" type="string" desc="Date Time" />
+		<node name="MSH-7" position_start="7" type="string" />
+		<node name="MSH-8" position_start="8" type="string" desc="Message Type" />
+		<node name="MSH-9" position_start="9" type="string" />
+		<node name="MSH-10" position_start="10" type="string" desc="Processing ID" default="P" />
+		<node name="MSH-11" position_start="11" type="string" desc="Version ID" default="2.3" />
+		<node name="MSH-12" position_start="12" type="string" desc="" default="" />
+		<node name="MSH-13" position_start="13" type="string" desc="" default="" />
+		<node name="MSH-14" position_start="14" type="string" desc="" default="" />
+		<node name="MSH-15" position_start="15" type="string" desc="" default="" />
+		<node name="MSH-16" position_start="16" type="string" desc="" default="" />
+		<node name="EVN" structure="delimited" occurs_min="1" field_order="infix" delimiter="|"
+			desc="Event Type Segment" identifier="EVN" identifier_start="0">
+			<node name="EVN-0" position_start="0" type="string" desc="Segment ID" required="True"
+				default="EVN" />
+			<node name="EVN-1" position_start="1" type="string" desc="Event Type Code" />
+			<node name="EVN-2" position_start="2" type="string" desc="Recorded Date Time" />
+			<node name="EVN-3" position_start="3" type="string" />
+			<node name="EVN-4" position_start="4" type="string" desc="Event Reason Code" />
+		</node>
+		<node name="PID" structure="delimited" occurs_min="1" field_order="infix" desc="Patient Identification"
+			delimiter="|" identifier="PID" identifier_start="0">
+			<node name="PID-0" position_start="0" type="string" desc="Segment ID" required="True"
+				default="PID" />
+			<node name="PID-1" position_start="1" type="string" />
+			<node name="PID-2" position_start="2" type="string" desc="Patient ID External" />
+			<node name="PID-3" position_start="3" type="string" />
+			<node name="PID-4" position_start="4" type="string" desc="Alternate Patient ID" />
+			<node name="PID-5" structure="delimited" occurs_min="0" field_order="infix" desc="Patient Name"
+				delimiter="^" position_start="5">
+				<node name="PID-5-0" position_start="0" type="string" desc="Last" />
+				<node name="PID-5-1" position_start="1" type="string" desc="First" />
+				<node name="PID-5-2" position_start="2" type="string" desc="MI" />
+			</node>
+			<node name="PID-6" position_start="6" type="string" />
+			<node name="PID-7" position_start="7" type="string" desc="Patient DOB" />
+			<node name="PID-8" position_start="8" type="string" desc="Patient Gender" />
+			<node name="PID-9" structure="delimited" occurs_min="0" field_order="infix" desc="Patient Alias"
+				delimiter="^" position_start="9">
+				<node name="PID-9-0" position_start="0" type="string" desc="Last" />
+				<node name="PID-9-1" position_start="1" type="string" desc="First" />
+				<node name="PID-9-2" position_start="2" type="string" desc="MI" />
+			</node>
+			<node name="PID-10" position_start="10" type="string" />
+			<node name="PID-11" structure="delimited" occurs_min="0" field_order="infix" desc="Patient Address"
+				delimiter="^" position_start="11">
+				<node name="PID-11-0" position_start="0" type="string" desc="Address Line 1" />
+				<node name="PID-11-1" position_start="1" type="string" desc="Address Line 2" />
+				<node name="PID-11-2" position_start="2" type="string" desc="City" />
+				<node name="PID-11-3" position_start="3" type="string" desc="State" />
+				<node name="PID-11-4" position_start="4" type="string" desc="Zip" />
+				<node name="PID-11-5" position_start="5" type="string" desc="Country" />
+			</node>
+			<node name="PID-12" position_start="12" type="string" />
+			<node name="PID-13" position_start="13" type="string" desc="Patient Home Phone" />
+			<node name="PID-14" position_start="14" type="string" />
+			<node name="PID-15" position_start="15" type="string" />
+			<node name="PID-16" position_start="16" type="string" />
+			<node name="PID-17" position_start="17" type="string" />
+			<node name="PID-18" position_start="18" type="string" />
+			<node name="PID-19" position_start="19" type="string" desc="Patient SSN" />
+			<node name="PV1" structure="delimited" occurs_min="0" field_order="infix" desc="Patient Visit Information"
+				delimiter="|" identifier="PV1" identifier_start="0">
+				<node name="PV1-0" position_start="0" type="string" desc="Segment ID" required="True"
+					default="PV1" />
+				<node name="PV1-1" position_start="1" type="string" />
+				<node name="PV1-2" position_start="2" type="string" />
+				<node name="PV1-3" position_start="3" type="string" desc="Assigned Patient Location" />
+				<node name="PV1-4" position_start="4" type="string" />
+				<node name="PV1-5" position_start="5" type="string" />
+				<node name="PV1-6" position_start="6" type="string" />
+				<node name="PV1-7" position_start="7" type="string" desc="Attending Doctor" />
+				<node name="PV1-8" position_start="8" type="string" />
+				<node name="PV1-9" position_start="9" type="string" desc="Consulting Doctor" />
+				<node name="PV1-10" position_start="10" type="string" />
+				<node name="PV1-11" position_start="11" type="string" />
+				<node name="PV1-12" position_start="12" type="string" />
+				<node name="PV1-13" position_start="13" type="string" />
+				<node name="PV1-14" position_start="14" type="string" />
+				<node name="PV1-15" structure="delimited" occurs_min="0" field_order="infix" desc="Ambulatory Status"
+					delimiter="^" position_start="15">
+					<node name="PV1-15-0" position_start="0" type="string" desc="Is Patient Pregnant" />
+					<node name="PV1-15-1" position_start="1" type="string" desc="Last Menstrual Period" />
+				</node>
+				<node name="PV1-16" position_start="16" type="string" />
+				<node name="PV1-17" position_start="17" type="string" />
+				<node name="PV1-18" position_start="18" type="string" />
+				<node name="PV1-19" structure="delimited" occurs_min="0" field_order="infix" delimiter="."
+					position_start="19">
+					<node name="PV1-19-0" position_start="0" type="string" />
+					<node name="PV1-19-1" position_start="1" type="string" />
+				</node>
+			</node>
+			<node name="GT1" structure="delimited" occurs_min="0" field_order="infix" desc="Guarantor Information"
+				delimiter="|" identifier="GT1" identifier_start="0">
+				<node name="GT1-0" position_start="0" type="string" desc="Segment ID" />
+				<node name="GT1-1" position_start="1" type="string" />
+				<node name="GT1-2" position_start="2" type="string" />
+				<node name="GT1-3" structure="delimited" occurs_min="0" type="element" field_order="infix"
+					desc="Guarantor Name" delimiter="^" position_start="3">
+					<node name="GT1-3-0" position_start="0" type="string" desc="Last" />
+					<node name="GT1-3-1" position_start="1" type="string" desc="First" />
+					<node name="GT1-3-2" position_start="2" type="string" desc="MI" />
+				</node>
+				<node name="GT1-4" position_start="4" type="string" />
+				<node name="GT1-5" structure="delimited" occurs_min="0" type="element" field_order="infix"
+					desc="Guarantor Address" delimiter="^" position_start="5">
+					<node name="GT1-5-0" position_start="0" type="string" desc="Address Line 1" />
+					<node name="GT1-5-1" position_start="1" type="string" desc="Address Line 2" />
+					<node name="GT1-5-2" position_start="2" type="string" desc="City" />
+					<node name="GT1-5-3" position_start="3" type="string" desc="State" />
+					<node name="GT1-5-4" position_start="4" type="string" desc="Zip" />
+					<node name="GT1-5-5" position_start="5" type="string" desc="Country" />
+				</node>
+				<node name="GT1-6" position_start="6" type="string" desc="Guarantor Phone" />
+				<node name="GT1-7" position_start="7" type="string" />
+				<node name="GT1-8" position_start="8" type="string" desc="Guarantor DOB" />
+				<node name="GT1-9" position_start="9" type="string" desc="Guarantor Gender" />
+				<node name="GT1-10" position_start="10" type="string" />
+				<node name="GT1-11" position_start="11" type="string" desc="Guarantor Relationship" />
+				<node name="GT1-12" position_start="12" type="string" desc="Guarantor SSN" />
+			</node>
+			<node name="IN1" structure="delimited" occurs_min="0" field_order="infix" desc="Insurance Information"
+				delimiter="|" identifier="IN1" identifier_start="0">
+				<node name="IN1-0" position_start="0" type="string" desc="Segment ID" required="True"
+					default="IN1" />
+				<node name="IN1-1" position_start="1" type="string" desc="Set ID" />
+				<node name="IN1-2" position_start="2" type="string" />
+				<node name="IN1-3" position_start="3" type="string" desc="Company ID" />
+				<node name="IN1-4" position_start="4" type="string" desc="Company Name" required="True" />
+				<node name="IN1-5" structure="delimited" occurs_min="0" type="element" field_order="infix"
+					desc="Company Address" delimiter="^" position_start="5">
+					<node name="IN1-5-0" position_start="0" type="string" desc="Address Line 1" />
+					<node name="IN1-5-1" position_start="1" type="string" desc="Address Line 2" />
+					<node name="IN1-5-2" position_start="2" type="string" desc="City" />
+					<node name="IN1-5-3" position_start="3" type="string" desc="State" />
+					<node name="IN1-5-4" position_start="4" type="string" desc="Zip" />
+					<node name="IN1-5-5" position_start="5" type="string" desc="Country" />
+				</node>
+				<node name="IN1-6" position_start="6" type="string" />
+				<node name="IN1-7" position_start="7" type="string" desc="Company Phone" />
+				<node name="IN1-8" position_start="8" type="string" desc="Group Number" />
+				<node name="IN1-9" position_start="9" type="string" />
+				<node name="IN1-10" position_start="10" type="string" />
+				<node name="IN1-11" position_start="11" type="string" desc="Employer Name" />
+				<node name="IN1-12" position_start="12" type="string" />
+				<node name="IN1-13" position_start="13" type="string" />
+				<node name="IN1-14" position_start="14" type="string" />
+				<node name="IN1-15" position_start="15" type="string" desc="Plan Type" />
+				<node name="IN1-16" structure="delimited" occurs_min="0" type="element" field_order="infix"
+					desc="Name of Insured" delimiter="^" position_start="16">
+					<node name="IN1-16-0" position_start="0" type="string" desc="Last" />
+					<node name="IN1-16-1" position_start="1" type="string" desc="First" />
+					<node name="IN1-16-2" position_start="2" type="string" desc="MI" />
+				</node>
+				<node name="IN1-17" position_start="17" type="string" desc="Insured Relationship" />
+				<node name="IN1-18" position_start="18" type="string" desc="Insured DOB" />
+				<node name="IN1-19" structure="delimited" type="element" field_order="infix" desc="Order Files"
+					delimiter="^" position_start="19" occurs_min="0">
+					<node name="IN1-19-0" position_start="0" type="string" desc="Address Line 1" />
+					<node name="IN1-19-1" position_start="1" type="string" desc="Address Line 2" />
+					<node name="IN1-19-2" position_start="2" type="string" desc="City" />
+					<node name="IN1-19-3" position_start="3" type="string" desc="State" />
+					<node name="IN1-19-4" position_start="4" type="string" desc="Zip" />
+					<node name="IN1-19-5" position_start="5" type="string" desc="Country" />
+				</node>
+				<node name="IN1-20" position_start="20" type="string" />
+				<node name="IN1-21" position_start="21" type="string" />
+				<node name="IN1-22" position_start="22" type="string" />
+				<node name="IN1-23" position_start="23" type="string" />
+				<node name="IN1-24" position_start="24" type="string" />
+				<node name="IN1-25" position_start="25" type="string" />
+				<node name="IN1-26" position_start="26" type="string" />
+				<node name="IN1-27" position_start="27" type="string" />
+				<node name="IN1-28" position_start="28" type="string" />
+				<node name="IN1-29" position_start="29" type="string" />
+				<node name="IN1-30" position_start="30" type="string" />
+				<node name="IN1-31" position_start="31" type="string" desc="Type of Agreement Code" />
+				<node name="IN1-32" position_start="32" type="string" />
+				<node name="IN1-33" position_start="33" type="string" />
+				<node name="IN1-34" position_start="34" type="string" />
+				<node name="IN1-35" position_start="35" type="string" />
+				<node name="IN1-36" position_start="36" type="string" desc="Policy Number" />
+				<node name="IN1-37" position_start="37" type="string" />
+				<node name="IN1-38" position_start="38" type="string" />
+				<node name="IN1-39" position_start="39" type="string" />
+				<node name="IN1-40" position_start="40" type="string" />
+				<node name="IN1-41" position_start="41" type="string" />
+				<node name="IN1-42" position_start="42" type="string" />
+				<node name="IN1-43" position_start="43" type="string" desc="Insured Sex" />
+				<node name="IN2" structure="delimited" occurs_min="0" field_order="infix" desc="Insurance Additional Information"
+					delimiter="|" identifier="IN2" identifier_start="0">
+					<node name="IN2-0" position_start="0" type="string" desc="Segment ID" required="True"
+						default="IN2" />
+					<node name="IN2-1" position_start="1" type="string" />
+					<node name="IN2-2" position_start="2" type="string" desc="Insured SSN" />
+					<node name="IN2-3" position_start="3" type="string" />
+					<node name="IN2-4" position_start="4" type="string" />
+					<node name="IN2-5" position_start="5" type="string" />
+					<node name="IN2-6" position_start="6" type="string" desc="Medicare Health Ins Card Number" />
+					<node name="IN2-7" position_start="7" type="string" />
+					<node name="IN2-8" position_start="8" type="string" desc="Medicaid Case Number" />
+				</node>
+			</node>
+			<node name="ORC" structure="delimited" occurs_min="0" field_order="infix" desc="Common Order Information"
+				delimiter="|" identifier="ORC" identifier_start="0">
+				<node name="ORC-0" position_start="0" type="string" desc="Segment ID" required="True"
+					default="ORC" />
+				<node name="ORC-1" position_start="1" type="string" desc="Order Control" required="True"
+					default="NW" />
+				<node name="ORC-2" position_start="2" type="string" />
+				<node name="ORC-3" position_start="3" type="string" />
+				<node name="ORC-4" position_start="4" type="string" />
+				<node name="ORC-5" position_start="5" type="string" desc="Order Status" />
+				<node name="ORC-6" position_start="6" type="string" />
+				<node name="ORC-7" position_start="7" type="string" />
+				<node name="ORC-8" position_start="8" type="string" />
+				<node name="ORC-9" position_start="9" type="string" />
+				<node name="ORC-10" position_start="10" type="string" />
+				<node name="ORC-11" position_start="11" type="string" />
+				<node name="ORC-12" structure="delimited" occurs_min="0" field_order="infix" desc="Ordering Physician"
+					delimiter="^" position_start="12">
+					<node name="ORC-12-0" position_start="0" type="string" desc="Physician Identification" />
+					<node name="ORC-12-1" position_start="1" type="string" desc="Physician Last" />
+					<node name="ORC-12-2" position_start="2" type="string" desc="Physician First" />
+					<node name="ORC-12-3" position_start="3" type="string" desc="MI" />
+					<node name="ORC-12-4" position_start="4" type="string" />
+					<node name="ORC-12-5" position_start="5" type="string" />
+					<node name="ORC-12-6" position_start="6" type="string" />
+					<node name="ORC-12-7" position_start="7" type="string" desc="ID Type" />
+				</node>
+				<node name="NTE" structure="delimited" occurs_min="0" field_order="infix" delimiter="|"
+					desc="Notes" identifier="NTE" identifier_start="0">
+					<node name="NTE-0" position_start="0" type="string" desc="Segment ID" required="True"
+						default="NTE" />
+					<node name="NTE-1" position_start="1" type="string" desc="Set ID" />
+					<node name="NTE-2" position_start="2" type="string" />
+					<node name="NTE-3" position_start="3" type="string" desc="Note" />
+				</node>
+				<node name="DG1" structure="delimited" occurs_min="0" field_order="infix" desc="Diagnosis Code"
+					delimiter="|" identifier="DG1" identifier_start="0">
+					<node name="DG1-0" position_start="0" type="string" desc="Segment ID" />
+					<node name="DG1-1" position_start="1" type="string" />
+					<node name="DG1-2" position_start="2" type="string" />
+					<node name="DG1-3" position_start="3" type="string" />
+					<node name="DG1-4" structure="delimited" occurs_min="0" type="element" field_order="infix"
+						desc="ICD9 Diagnosis" delimiter="^" position_start="4">
+						<node name="DG1-4-0" position_start="0" type="string" desc="ICD9 Code" />
+						<node name="DG1-4-1" position_start="1" type="string" desc="ICD9 Text" />
+					</node>
+				</node>
+				<node name="OBR" structure="delimited" occurs_min="0" field_order="infix" desc="Order Detail"
+					delimiter="|" identifier="OBR" identifier_start="0">
+					<node name="OBR-0" position_start="0" type="string" desc="Segment ID" required="True"
+						default="OBR" />
+					<node name="OBR-1" position_start="1" type="string" desc="Set ID" />
+					<node name="OBR-2" position_start="2" type="string" desc="Placer Order Number" required="True" />
+					<node name="OBR-3" position_start="3" type="string" desc="Filler Order Number" />
+					<node name="OBR-4" structure="delimited" occurs_min="0" type="element" field_order="infix"
+						desc="Universal Service ID" delimiter="^" position_start="4">
+						<node name="OBR-4-0" position_start="0" type="string" desc="Test Code" required="True" />
+						<node name="OBR-4-1" position_start="1" type="string" desc="Test Description" required="True" />
+					</node>
+					<node name="OBR-5" position_start="5" type="string" />
+					<node name="OBR-6" position_start="6" type="string" />
+					<node name="OBR-7" position_start="7" type="string" desc="Observation Date Time" />
+					<node name="OBR-8" position_start="8" type="string" />
+					<node name="OBR-9" position_start="9" type="string" />
+					<node name="OBR-10" position_start="10" type="string" desc="Ordering User" />
+					<node name="OBR-11" position_start="11" type="string" />
+					<node name="OBR-12" position_start="12" type="string" />
+					<node name="OBR-13" position_start="13" type="string" desc="Relevant Clinical Info" />
+					<node name="OBR-14" position_start="14" type="string" desc="Order Built Date Time" />
+					<node name="OBR-15" position_start="15" type="string" />
+					<node name="OBR-16" structure="delimited" occurs_min="0" type="element" field_order="infix"
+						desc="Ordering Physician" delimiter="^" position_start="16">
+						<node name="OBR-16-0" position_start="0" type="string" desc="Physician Identification" />
+						<node name="OBR-16-1" position_start="1" type="string" desc="Physician Last" />
+						<node name="OBR-16-2" position_start="2" type="string" desc="Physician First" />
+						<node name="OBR-16-3" position_start="3" type="string" desc="MI" />
+						<node name="OBR-16-4" position_start="4" type="string" />
+						<node name="OBR-16-5" position_start="5" type="string" />
+						<node name="OBR-16-6" position_start="6" type="string" />
+						<node name="OBR-16-7" position_start="7" type="string" desc="ID Type" />
+					</node>
+					<node name="OBR-17" position_start="17" type="string" desc="Order Callback Number" />
+					<node name="OBR-18" position_start="18" type="string" />
+					<node name="OBR-19" position_start="19" type="string" desc="Placer Field 2" />
+					<node name="OBR-20" position_start="20" type="string" desc="Filler Field 1" />
+					<node name="OBR-21" position_start="21" type="string" />
+					<node name="OBR-22" position_start="22" type="string" />
+					<node name="OBR-23" position_start="23" type="string" />
+					<node name="OBR-24" position_start="24" type="string" />
+					<node name="OBR-25" position_start="25" type="string" />
+					<node name="OBR-26" position_start="26" type="string" />
+					<node name="OBR-27" structure="delimited" occurs_min="0" type="element" field_order="infix"
+						desc="Order Attributes" delimiter="^" position_start="27">
+						<node name="OBR-27-0" position_start="0" type="string" />
+						<node name="OBR-27-1" position_start="1" type="string" />
+						<node name="OBR-27-2" position_start="2" type="string" />
+						<node name="OBR-27-3" position_start="3" type="string" />
+						<node name="OBR-27-4" position_start="4" type="string" />
+						<node name="OBR-27-5" position_start="5" type="string" desc="Priority" />
+						<node name="OBR-27-6" position_start="6" type="string" desc="Condition" />
+					</node>
+					<node name="OBR-28" structure="delimited" occurs_min="0" type="element" field_order="infix"
+						desc="Result Copies To" delimiter="^" position_start="28">
+						<node name="OBR-28-0" position_start="0" type="string" desc="Phone or Fax Number" />
+						<node name="OBR-28-1" position_start="1" type="string" desc="Physician Last" />
+						<node name="OBR-28-2" position_start="2" type="string" desc="Physician First" />
+						<node name="OBR-28-3" position_start="3" type="string" desc="Physician MI" />
+						<node name="OBR-28-4" position_start="4" type="string" />
+						<node name="OBR-28-5" position_start="5" type="string" />
+						<node name="OBR-28-6" position_start="6" type="string" />
+						<node name="OBR-28-7" position_start="7" type="string" desc="Phone Type" />
+						<node name="OBR-28-8" position_start="8" type="string" />
+						<node name="OBR-28-9" position_start="9" type="string" />
+						<node name="OBR-28-10" position_start="10" type="string" />
+						<node name="OBR-28-11" position_start="11" type="string" />
+						<node name="OBR-28-12" position_start="12" type="string" desc="Atlas" />
+						<node name="OBR-28-13" position_start="13" type="string" desc="Copy To" />
+					</node>
+					<node name="NTE" structure="delimited" occurs_min="0" field_order="infix" delimiter="|"
+						desc="Notes" identifier="NTE" identifier_start="0">
+						<node name="NTE-0" position_start="0" type="string" desc="Segment ID" required="True"
+							default="NTE" />
+						<node name="NTE-1" position_start="1" type="string" desc="Set ID" />
+						<node name="NTE-2" position_start="2" type="string" />
+						<node name="NTE-3" position_start="3" type="string" desc="Note" />
+					</node>
+					<node name="DG1" structure="delimited" occurs_min="0" field_order="infix" desc="Diagnosis Code"
+						delimiter="|" identifier="DG1" identifier_start="0">
+						<node name="DG1-0" position_start="0" type="string" desc="Segment ID" />
+						<node name="DG1-1" position_start="1" type="string" />
+						<node name="DG1-2" position_start="2" type="string" />
+						<node name="DG1-3" position_start="3" type="string" />
+						<node name="DG1-4" structure="delimited" occurs_min="0" type="element" field_order="infix"
+							desc="ICD9 Diagnosis" delimiter="^" position_start="4">
+							<node name="DG1-4-0" position_start="0" type="string" desc="ICD9 Code" />
+							<node name="DG1-4-1" position_start="1" type="string" desc="ICD9 Text" />
+						</node>
+					</node>
+					<node name="OBX" structure="delimited" occurs_min="0" field_order="infix" desc="Result Detail"
+						delimiter="|" identifier="OBX" identifier_start="0">
+						<node name="OBX-0" position_start="0" type="string" desc="Segment ID" required="True"
+							default="OBX" />
+						<node name="OBX-1" position_start="1" type="string" desc="Set ID" />
+						<node name="OBX-2" position_start="2" type="string" />
+						<node name="OBX-3" position_start="3" type="string" desc="Observation ID" />
+						<node name="OBX-4" position_start="4" type="string" />
+						<node name="OBX-5" position_start="5" type="string" desc="Observation Results" />
+					</node>
+				</node>
+			</node>
+		</node>
+	</node>
+	<node name="FTS" structure="delimited" occurs_min="0" field_order="infix" desc="File Trailer Segment"
+		delimiter="|" identifier="FTS" identifier_start="0">
+		<node name="FTS-0" position_start="0" type="string" desc="Segment ID" required="True"
+			default="FTS" />
+		<node name="FTS-1" position_start="1" type="string" />
+		<node name="FTS-2" position_start="2" type="string" desc="File Trailer Comment" default="End Of File" />
+	</node>
+</node>

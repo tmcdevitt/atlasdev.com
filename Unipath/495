@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<AIEConfig>
+	<Param name="SpecSource" value="Labworks_NextGen_OBR.xml"/>
+	<Param name="SpecTarget" value="NextGen_OBR.xml"/>
+	<Param name="XSLT" value="NextGen_OBR.xslt"/>
+</AIEConfig>
