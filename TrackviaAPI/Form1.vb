@@ -10,6 +10,7 @@ Public Class Form1
 
     ' Setup the variables necessary to make the Request
     Dim grantType As String = "password"
+    Dim grantType111 As String = "password111"
     Dim applicationid As String = "{applicationId}"
     Dim clientid As String = "311_4y6ok3vk6bokswwc4ow0gkgsc4wwcs8goksskgokskgkoocwc0"
     Dim clientsecret As String = "2rgmb4110qas0osogcwwowgck4wso0g8g0kokksgo4cwwksk4o"
