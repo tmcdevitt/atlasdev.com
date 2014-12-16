@@ -61,9 +61,7 @@
 				<node name="PID-11-1" position_start="1" type="string" desc="Address Line 2" />
 				<node name="PID-11-2" position_start="2" type="string" desc="City" />
 				<node name="PID-11-3" position_start="3" type="string" desc="State" />
-				<node name="PID-11-4" position_start="4" type="string" desc="Zip" />
-				<node name="PID-11-5" position_start="5" type="string" desc="Country" />
-			</node>
+				<node name="PID-11-4" position_start="4" type="strinvvcxvzxcvzxcvzxcvxzvzx
 			<node name="PID-12" position_start="12" type="string" />
 			<node name="PID-13" position_start="13" type="string" desc="Patient Home Phone" />
 			<node name="PID-14" position_start="14" type="string" />
